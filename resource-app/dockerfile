@@ -1,0 +1,24 @@
+FROM node:20-alpine
+
+# Variablen aus .env aus docker-compose.yml zur Build Generierung
+ARG OAUTH2_PROXY_RESOURCE_APP_PORT
+ARG OAUTH2_PROXY_AUDIENCE
+ARG OAUTH2_PROXY_ISSUER_URL
+# Variablen die auch zur Laufzeit gebraucht werden:
+# in jwt.js
+ENV ISSUER=${OAUTH2_PROXY_ISSUER_URL}
+# in jwt.js
+ENV AUDIENCE=${OAUTH2_PROXY_AUDIENCE}
+# in app.js 
+ENV PORT=${OAUTH2_PROXY_RESOURCE_APP_PORT}
+
+WORKDIR /app
+
+COPY package.json package-lock.json* ./
+RUN npm install --production
+
+COPY app.js jwt.js ./
+
+EXPOSE ${OAUTH2_PROXY_RESOURCE_APP_PORT}
+
+CMD ["node", "app.js"]
