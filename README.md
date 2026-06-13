@@ -1,4 +1,9 @@
 # oauth2proxy
+
+# bei Änderungen in der .env ,die das Dockerfile in der 
+#rseource-app betreffen. muss das
+# dockerfile neu geschrieben werden: sudo docker compose build
+
 Keycloak Test and Simulation
 Container mit run.sh starten, dann werden auch die logs enabled in:
 

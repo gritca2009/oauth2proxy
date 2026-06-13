@@ -37,11 +37,11 @@ variable "KC_CLIENT_1" {
 }
 
 locals {
-  KC_USER_1 = "${var.KC_REALM_1}_user1"
+  KC_USER_1 = "user1"
   KC_USER_2 = "${var.KC_REALM_1}_user2"
   KC_USER_3 = "${var.KC_REALM_1}_user3"
   KC_USER_4 = "${var.KC_REALM_1}_user4"
-  KC_PW_1 = "${var.KC_REALM_1}test123"
+  KC_PW_1 = "user1"
 
 }
 
