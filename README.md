@@ -1,7 +1,7 @@
 # oauth2proxy
 
 # bei Änderungen in der .env ,die das Dockerfile in der 
-#rseource-app betreffen. muss das
+# rseource-app betreffen. muss das
 # dockerfile neu geschrieben werden: sudo docker compose build
 
 Keycloak Test and Simulation
